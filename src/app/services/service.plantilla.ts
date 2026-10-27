@@ -14,8 +14,23 @@ export class ServicePlantilla {
         return firstValueFrom(this._http.get<string>(this.urlApi + request))
     }
 
+    async getFunciones2(): Promise<string[]>{
+        let request = "api/Plantilla/funciones"
+        return firstValueFrom(this._http.get<string[]>(this.urlApi + request))
+    }
+
     async getPantillaFuncion(funcion: string): Promise<Plantillas[]>{
         let request = "api/Plantilla/PlantillaFuncion/" + funcion;
         return firstValueFrom(this._http.get<Plantillas[]>(this.urlApi + request))
+    }
+
+    async getPlantillasFunciones(funciones: Array<string>): Promise<Plantillas[]> {
+        let content = "";
+        for (let fun of funciones) {
+            content += "funcion=" + fun + "&";
+        }
+        content = content.substring(0, content.length -1);
+        let request = "api/plantilla/plantillafunciones?" + content;
+        return firstValueFrom(this._http.get<Plantillas[]>(this.urlApi + request)) 
     }
 }
