@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComicsComponent } from './components/comics-component/comics-component';
 import { PersonasApiComponent } from './components/personas-api-component/personas-api-component';
 import { CochesApiComponents } from './components/coches-api-components/coches-api-components';
+import { PlantillaFuncionSimpleComponent } from './components/plantilla-funcion-simple-component/plantilla-funcion-simple-component';
 
 const routes: Routes = [
   {path: "", component: ComicsComponent},
   {path: "personas", component: PersonasApiComponent},
   {path: "coches", component: CochesApiComponents},
+  {path: "plantillas", component: PlantillaFuncionSimpleComponent},
 ];
 
 @NgModule({

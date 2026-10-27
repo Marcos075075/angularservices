@@ -10,16 +10,27 @@ import { PersonasApiComponent } from './components/personas-api-component/person
 import { MenuComponent } from './components/menu-component/menu-component';
 import { ServiceCoches } from './services/service.coches';
 import { CochesApiComponents } from './components/coches-api-components/coches-api-components';
+import { PlantillaFuncionSimpleComponent } from './components/plantilla-funcion-simple-component/plantilla-funcion-simple-component';
+import { ServicePlantilla } from './services/service.plantilla';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [App, ComicsComponent, PersonasApiComponent, MenuComponent, CochesApiComponents],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    App,
+    ComicsComponent,
+    PersonasApiComponent,
+    MenuComponent,
+    CochesApiComponents,
+    PlantillaFuncionSimpleComponent,
+  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [
     provideHttpClient(),
     provideBrowserGlobalErrorListeners(),
     ServiceComics,
     ServicePersonas,
     ServiceCoches,
+    ServicePlantilla
   ],
   bootstrap: [App],
 })

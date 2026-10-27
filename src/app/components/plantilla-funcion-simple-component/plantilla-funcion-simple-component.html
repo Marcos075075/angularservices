@@ -1,0 +1,30 @@
+<h1>Plantilla funciones simple</h1>
+<form #formuser="ngForm" (ngSubmit)="mostrarPlantilla(cajaSelect.value)">
+  <select name="select" id="select" #cajaSelect>
+    @for (func of funciones; track func) {
+      <option [value]="func">{{ func }}</option>
+    }
+  </select>
+  <br />
+  <button type="submit">Mostrar plantilla</button>
+</form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Apellido</th>
+      <th>Función</th>
+      <th>Turno</th>
+      <th>Salario</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (plantilla of arrayPlantilla; track plantilla) {
+      <tr>
+        <td>{{ plantilla.apellido }}</td>
+        <td>{{ plantilla.funcion }}</td>
+        <td>{{ plantilla.turno }}</td>
+        <td>{{ plantilla.salario }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
